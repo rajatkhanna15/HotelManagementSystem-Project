@@ -8,9 +8,10 @@ import java.awt.Color;
 import java.awt.Font;
 import java.awt.Image;
 import javax.swing.*;
+import java.awt.event.*;
 
 
-public class Dashboard extends JFrame {
+public class Dashboard extends JFrame implements ActionListener{
     
     JMenuBar mb;
     JMenu m1,m2;
@@ -30,18 +31,22 @@ public class Dashboard extends JFrame {
         mb.add(m2);
         
         it1 = new JMenuItem("Login");
+        it1.addActionListener(this);
         it1.setBackground(Color.cyan);
         m1.add(it1);
         
         it2 = new JMenuItem("Add Employees");
+        it2.addActionListener(this);
         it2.setBackground(Color.cyan);
         m2.add(it2);
         
         it3 = new JMenuItem("Add Rooms");
+        it3.addActionListener(this);
         it3.setBackground(Color.cyan);
         m2.add(it3);
         
         it4 = new JMenuItem("Add Drivers");
+        it4.addActionListener(this);
         it4.setBackground(Color.cyan);
         m2.add(it4);
         
@@ -67,9 +72,31 @@ public class Dashboard extends JFrame {
         
     }
     
+    public void actionPerformed(ActionEvent ae)
+    {
+        if(ae.getActionCommand().equals("RECEPTION"))
+        {
+            
+        }
+            
+        else if(ae.getActionCommand().equals("Add Employees"))
+        {
+            new AddEmployee().setVisible(true);
+            this.setVisible(false);
+        }
+        else if (ae.getActionCommand().equals("Add Rooms"))
+        {
+            new AddRoom().setVisible(true);
+            this.setVisible(false);
+        }
+        
+    }
+    
     public static void main(String[] args)
     {
         new Dashboard();
     }
+
+    
     
 }
