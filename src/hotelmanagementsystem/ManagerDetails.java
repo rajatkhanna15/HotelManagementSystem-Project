@@ -57,8 +57,6 @@ public class ManagerDetails extends JFrame implements ActionListener{
         t1.setBounds(0,40,1000,490);
         add(t1);
         
-        
-        
         b1 = new JButton("Load Data");
         b1.setBounds(350,530,120,30);
         b1.setBackground(Color.BLACK);
