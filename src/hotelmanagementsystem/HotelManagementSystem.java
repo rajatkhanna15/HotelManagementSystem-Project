@@ -60,7 +60,7 @@ public class HotelManagementSystem extends JFrame implements ActionListener {
             }
             catch(Exception e)
             {
-                
+                System.out.println(e);
             }
         }
     }
